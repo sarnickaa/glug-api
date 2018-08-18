@@ -34,4 +34,4 @@ const wineSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Example', wineSchema)
+module.exports = mongoose.model('Wine', wineSchema)
