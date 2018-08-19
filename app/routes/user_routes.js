@@ -26,22 +26,22 @@ const router = express.Router()
 // POST /sign-up
 router.post('/sign-up', (req, res) => {
   // start a promise chain, so that any errors will pass to `handle`
-  Promise.resolve(req.body.credentials)
+  Promise.resolve(req.body)
     // reject any requests where `credentials.password` is not present, or where
     // the password is an empty string
-    .then(credentials => {
-      if (!credentials ||
-          !credentials.password ||
-          credentials.password !== credentials.password_confirmation) {
+    .then(body => {
+      if (!body ||
+          !body.password ||
+          body.password !== body.password_confirmation) {
         throw new BadParamsError()
       }
     })
     // generate a hash from the provided password, returning a promise
-    .then(() => bcrypt.hash(req.body.credentials.password, bcryptSaltRounds))
+    .then(() => bcrypt.hash(req.body.password, bcryptSaltRounds))
     .then(hash => {
       // return necessary params to create a user
       return {
-        email: req.body.credentials.email,
+        email: req.body.email,
         hashedPassword: hash
       }
     })
