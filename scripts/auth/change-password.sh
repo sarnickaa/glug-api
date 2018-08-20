@@ -14,8 +14,8 @@ curl "${API}${URL_PATH}/" \
   --header "Content-Type: application/json" \
   --data '{
     "passwords": {
-      "old": "'"${OLDPW}"'",
-      "new": "'"${NEWPW}"'"
+      "oldp": "'"${OLDPW}"'",
+      "newp": "'"${NEWPW}"'"
     }
   }'
 
