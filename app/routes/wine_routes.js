@@ -60,6 +60,7 @@ router.get('/wines/:name', requireToken, (req, res) => {
 // POST /examples
 router.post('/wines', requireToken, (req, res) => {
   // set owner of new wine to be current user
+  console.log(req)
   req.body.wine.owner = req.user.id
 
   Wine.create(req.body.wine)
