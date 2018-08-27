@@ -14,6 +14,8 @@ GLUG: A Wine Tracker
 ## DESCRIPTION:
 <img width="1280" alt="screen shot 2018-08-23 at 10 49 14 am" src="https://media.git.generalassemb.ly/user/11649/files/3f924fb8-a6c2-11e8-9f3d-9f1ed13c1439">
 
+<img width="1280" alt="screen shot 2018-08-27 at 10 59 49 am" src="https://media.git.generalassemb.ly/user/11649/files/2e3abb12-a9ea-11e8-92f7-87b1055b7b66">
+
 GLUG is a simple wine preference tracker. A user can enter a record of a wine, detailing notable features such as a basic description of the wine itself (name/year/varietal are required fields), price, whether it was a gift or not, their personal score out of 10 and tasting notes. GLUG also showcases custom logo design.
 
 ## TECHNOLOGY:
@@ -30,6 +32,18 @@ a GLUG user can:
 * sign in to GLUG
 * change their password
 * sign out of GLUG
+
+## ROUTES:
+
+* /sign-in : POST
+* /sign-up : POST
+* /change-password : PATCH
+* /sign-out : DELETE
+
+* /wines : GET
+* /wines : POST
+* /wines/:id : PATCH
+* /wines/:id : DELETE
 
 ## PLANNING:
 
